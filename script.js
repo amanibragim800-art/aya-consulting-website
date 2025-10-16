@@ -13,6 +13,18 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// Service buttons click handler
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceButtons = document.querySelectorAll('.service-card .btn');
+    
+    serviceButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            console.log('Service button clicked:', this.href);
+            // Allow default behavior (navigation)
+        });
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -173,12 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Add click handlers for service cards
 document.querySelectorAll('.service-card .btn-outline').forEach(btn => {
     btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const href = btn.getAttribute('href');
-        if (href && href.endsWith('.html')) {
-            // For now, just show an alert since we haven't created service pages yet
-            alert('Страница услуги будет доступна в ближайшее время. Пожалуйста, свяжитесь с нами для получения консультации.');
-        }
+        // Allow default behavior (navigation to service pages)
+        // No preventDefault() - let the link work normally
     });
 });
 
